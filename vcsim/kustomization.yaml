@@ -7,3 +7,4 @@ namespace: swift-config-vsphere
 
 resources:
 - resources/configmap_helloworld.yaml
+- resources/namespace_swift-config-vsphere.yaml
