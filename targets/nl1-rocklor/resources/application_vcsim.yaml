@@ -1,0 +1,18 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vcenter-vcsim
+spec:
+  destination:
+    name: rocklor
+    namespace: swift-config-vsphere
+  project: default
+  source:
+    path: vcsim
+    repoURL: https://github.com/ben-obrien/ap-vsphere-config-ext
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

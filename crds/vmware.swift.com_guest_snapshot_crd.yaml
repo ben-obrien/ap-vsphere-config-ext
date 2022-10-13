@@ -1,0 +1,21 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: guestsnapshots.vmware.swift.com
+spec:
+  group: vmware.swift.com
+  names:
+    kind: Guestsnapshot
+    listKind: GuestsnapshotList
+    plural: guestsnapshots
+    singular: guestsnapshot
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    served: true
+    storage: true

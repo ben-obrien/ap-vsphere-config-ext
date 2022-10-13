@@ -1,0 +1,21 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: hostdatastores.vmware.swift.com
+spec:
+  group: vmware.swift.com
+  names:
+    kind: Hostdatastore
+    listKind: HostdatastoreList
+    plural: hostdatastores
+    singular: hostdatastore
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    served: true
+    storage: true

@@ -1,0 +1,48 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: virtualmachines.vmware.swift.com
+spec:
+  group: vmware.swift.com
+  names:
+    kind: VirtualMachine
+    listKind: VirtualMachineList
+    plural: virtualmachines
+    shortNames:
+    - vm
+    singular: virtualmachine
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - name: Power
+      type: string
+      jsonPath: .status.vsphere.hw_power_status
+    - name: Playbook
+      type: string
+      jsonPath: .status.conditions[*].reason
+    - name: Hostname
+      type: string
+      jsonPath: .spec.hostname
+    - name: IP Address
+      type: string
+      jsonPath: .spec.networks..ip
+    - name: MAC Address
+      type: string
+      jsonPath: .status.vsphere.hw_eth0.macaddress
+    - name: VLAN
+      type: string
+      jsonPath: .spec.networks[0]
+    - name: Role
+      type: string
+      jsonPath: .spec.software.linux.ignition.valuesFrom
+    - name: VMFolder
+      type: string
+      jsonPath: .status.vsphere.hw_folder
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    served: true
+    storage: true

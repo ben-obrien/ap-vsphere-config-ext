@@ -1,0 +1,17 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crds
+spec:
+  destination:
+    name: rocklor
+  project: default
+  source:
+    path: crds
+    repoURL: https://github.com/ben-obrien/ap-vsphere-config-ext
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

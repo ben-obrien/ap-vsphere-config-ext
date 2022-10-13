@@ -1,0 +1,21 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: vmhostdrsrules.vmware.swift.com
+spec:
+  group: vmware.swift.com
+  names:
+    kind: Vmhostdrsrule
+    listKind: VmhostdrsruleList
+    plural: vmhostdrsrules
+    singular: vmhostdrsrule
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    served: true
+    storage: true
