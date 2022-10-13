@@ -7,4 +7,4 @@ namePrefix: config-vsphere-
 resources:
 - resources/application_crds.yaml
 - resources/application_namespaces.yaml
-- resources/application_vcsim.yaml
+- resources/application_vcenter-vcsim.yaml
