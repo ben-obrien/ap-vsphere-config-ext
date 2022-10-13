@@ -9,7 +9,7 @@ spec:
     namespace: swift-config-vsphere
   project: default
   source:
-    path: vcsim
+    path: vcenters/vcsim
     repoURL: https://github.com/ben-obrien/ap-vsphere-config-ext
     targetRevision: main
   syncPolicy:
