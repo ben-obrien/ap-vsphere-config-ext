@@ -2,14 +2,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vcenter-vcsim
+  name: crds
 spec:
   destination:
-    name: rocklor
-    namespace: swift-config-vsphere
+    name: decklor
   project: default
   source:
-    path: vcenters/vcsim
+    path: crds
     repoURL: https://github.com/ben-obrien/ap-vsphere-config-ext
     targetRevision: main
   syncPolicy:
